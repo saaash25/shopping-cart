@@ -1,0 +1,23 @@
+
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                {{#each products}}
+                <div class="col-md-3 mb-5">
+                    <div class="card shadow-sm p-2" style="width: 15rem;">
+                        <img class="card-img-top" src="/product-images/{{this._id}}.jpg" alt="Card image cap" width="150" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <p class="card-text">{{this.description}}.</p>
+                            <div class="m-auto text-center">
+                                {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">Add to Cart</a> --}}
+                                <button type="button" onClick=" return ShopingCart.addToCart('{{this._id}}')" class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                
+            </div>
+        </div>
+    </section>

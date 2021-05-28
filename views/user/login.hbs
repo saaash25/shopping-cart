@@ -1,0 +1,51 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 border m-auto rounded">
+                <div class="row mt-10">
+                    <div class="col-md-6 m-auto text-center">
+                        <h2>Login Form</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 m-auto">
+                        <form method="post" action="/login">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="email" class="form-control" id="username" name="username"
+                                    placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6 m-auto">
+                                        <a href="/signup" for="createAccount">Create New Account?</a>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button type="submit" class="btn btn-primary ">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {{#if loginError}}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-7 m-auto">
+                                        <div class="alert alert-danger text-center" role="alert">
+                                            {{loginError}}!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/if}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

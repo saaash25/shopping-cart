@@ -1,0 +1,40 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><h1>Update Product</h1></div>
+
+            <form action="/admin/edit-product/{{products._id}}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{products.name}}" placeholder="Product">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                        <input type="text" class="form-control" id="category" name="category" value="{{products.category}}" placeholder="Category">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description"  placeholder="Description">{{products.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="input" class="form-control" id="price" name="price" value="{{products.price}}" placeholder="price">
+                </div>
+                 <div class="form-group">
+                     <img src="/product-images/{{products.imageUrl}}" alt="" name="imagePreview" class="imagePreview" width="150px" height="150px">
+                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Image</label>
+                    <input type="file" value="{{products.imageUrl}}" onChange="return ShopingCart.imageChange(event)" class="form-control image" id="image" name="image">
+                    
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="productId" value="{{products._id}}">
+                    <button type="submit" name="submit" class="btn btn-success btn-sm">Update Product</button>
+                     <a href="/admin"  name="cancel" id="cancelProduct" class="btn btn-secondary btn-sm">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
